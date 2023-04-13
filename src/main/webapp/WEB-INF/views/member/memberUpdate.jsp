@@ -80,6 +80,7 @@
 			</form>		
 		</div>
 	</div>
+	<c:import url="../template/footer.jsp"></c:import>
 	<c:import url="../template/common_js.jsp"></c:import>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="../resources/js/address.js"></script>

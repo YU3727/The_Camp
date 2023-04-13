@@ -29,9 +29,8 @@ const btn = document.getElementById("btn");
 // let pwEqualCheck = false;
 
 let checks = [false, false, false, false, false, false, false, false]
-
 //id 검증
-id.addEventListener("blur", function(){
+id.addEventListener("keyup", function(){
     //중복 검사
     let xhttp = new XMLHttpRequest();
 
@@ -65,20 +64,21 @@ id.addEventListener("blur", function(){
     })
 });
 
-//     if(id.value.length != 0){
-//         // idCheck = true;
-//         idResult.innerHTML = "정상 아이디";
-//         checks[0] = true;
-//         idResult.classList.add("greenResult");
-//         idResult.classList.remove("redResult");
-//     }
-//     else{
-//         idResult.innerHTML = "아이디는 필수 입력";
-//         checks[0] = false;
-//         idResult.classList.add("redResult");
-//         idResult.classList.remove("greenResult");
-//     }
-// })
+id.addEventListener("blur", function(){
+    if(id.value.length != 0){
+        
+        checks[0] = true;
+      
+    }
+    else{
+        idResult.innerHTML = '아이디는 필수 입력';
+        checks[0] = false;
+        idResult.classList.add("redResult");
+        idResult.classList.remove("blueResult");
+        
+    }
+})
+
 
 pw.addEventListener("keyup", function(){
     if(pw.value.length > 5 && pw.value.length < 13){
@@ -189,7 +189,7 @@ addr.addEventListener("blur", function(){
     
 })
 
-email.addEventListener("blur", function(){
+email.addEventListener("keyup", function(){
     let xhttp = new XMLHttpRequest();
 
     //url, method
@@ -218,17 +218,18 @@ email.addEventListener("blur", function(){
         }
         
     })
-
-    // if(email.value.length != 0){
-    //     emailResult.innerHTML =""
-    //    checks[7] = true;
-    // }
-    // else{
-    //     emailResult.innerHTML = "이메일은 필수 입니다";
-    //     checks[7] = false;
-    //     emailResult.classList.add("redResult");
-    //     emailResult.classList.remove("blueResult");
-    // }
+})
+    email.addEventListener("keyup", function(){
+    if(email.value.length != 0){
+        emailResult.innerHTML =""
+       checks[7] = true;
+    }
+    else{
+        emailResult.innerHTML = "이메일은 필수 입니다";
+        checks[7] = false;
+        emailResult.classList.add("redResult");
+        emailResult.classList.remove("blueResult");
+    }
     
 })
 

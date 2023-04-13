@@ -112,8 +112,7 @@ public class MemberService {
 	public int setMemberUpdate(MemberDTO memberDTO, AddressDTO addressDTO)throws Exception {
 		
 		int result = memberDAO.setMemberUpdate(memberDTO);
-		
-		if(addressDTO != null) {
+		if(addressDTO.getAddress() != null) {
 			if(addressDTO.getAddressNum()==null) {
 				result=memberDAO.setAddressJoin(addressDTO);
 			} else {

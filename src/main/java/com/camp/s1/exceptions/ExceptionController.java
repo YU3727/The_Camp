@@ -10,21 +10,21 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @ControllerAdvice
 public class ExceptionController {
 
-	@ExceptionHandler(NoHandlerFoundException.class)
-	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public ModelAndView Error404Exception() {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "요청하신 페이지가 존재하지 않습니다.");
-		mv.setViewName("common/exception");
-		return mv;
-	}
-	
-	@ExceptionHandler(Exception.class)
-	public ModelAndView Error500Exception() {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("message", "잘못된 접근입니다.");
-		mv.setViewName("common/exception");
-		return mv;
-	}
+//	@ExceptionHandler(NoHandlerFoundException.class)
+//	@ResponseStatus(HttpStatus.NOT_FOUND)
+//	public ModelAndView Error404Exception() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("message", "요청하신 페이지가 존재하지 않습니다.");
+//		mv.setViewName("common/exception");
+//		return mv;
+//	}
+//	
+//	@ExceptionHandler(Exception.class)
+//	public ModelAndView Error500Exception() {
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("message", "잘못된 접근입니다.");
+//		mv.setViewName("common/exception");
+//		return mv;
+//	}
 	
 }

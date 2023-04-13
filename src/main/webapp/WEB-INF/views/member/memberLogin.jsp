@@ -22,10 +22,7 @@
 	</div>
 </section>
 <!--================Banner Area =================-->
-<div class="container-fluid">
-	<div class="row justify-content-center">
-		<h1 class="col-md-7 my-5">Member Login</h1>
-	</div>
+<div class="container-fluid">	
 	<div class="row justify-content-center my-5">
 		<form class="col-md-7" action="memberLogin" method="post">
 			<div class="mb-3">
