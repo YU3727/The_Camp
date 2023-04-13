@@ -1,8 +1,11 @@
 $(function() {
     "use strict";
+    var nav_offset_top = $('.header_area').height()+50; 
+    /*-------------------------------------------------------------------------------
+	  Navbar 
+	-------------------------------------------------------------------------------*/
 
-    let nav_offset_top = $('.header_area').height()+50; 
-    
+	//* Navbar Fixed  
     function navbarFixed(){
         if ( $('.header_area').length ){ 
             $(window).scroll(function() {
@@ -17,6 +20,42 @@ $(function() {
     };
     navbarFixed();
 
+    function testimonialSlider(){
+        if ( $('.testimonial_slider').length ){
+            $('.testimonial_slider').owlCarousel({
+                loop:true,
+                margin: 30,
+                items: 2,
+                nav:false,
+                autoplay: true,
+                dots: true,
+                smartSpeed: 1500,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    768: {
+                        items: 2,
+                    },
+                }
+            })
+        }
+    }
+    testimonialSlider();
+
+    function navActive(){
+        let url=window.location.pathname;
+        $('.nav-item').find('a').each(function(){
+            if($(this).attr('href')==url){
+                $(this).parent().toggleClass('active')
+                $(this).parent().parent().parent().toggleClass('active')
+            }
+        })
+
+    }
+    navActive();
+
     $(".preloader").fadeOut();
     // this is for close icon when navigation open in mobile view
     $(".nav-toggler").on('click', function() {
@@ -28,7 +67,7 @@ $(function() {
         $(".app-search input").focus();
     });
 
-    // ============================================================== 
+     // ============================================================== 
     // Resize all elements
     // ============================================================== 
     $("body, .page-wrapper").trigger("resize");
